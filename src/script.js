@@ -78,13 +78,13 @@ flink.addEventListener("click", convertToFahren);
 function showWeather(response) {
   let h1 = document.querySelector("h1");
   let temperature = Math.round(response.data.main.temp);
+  let weatherIcon = document.querySelector("#weatherIcon");
+
   h1.innerHTML = `${temperature}°`;
-}
-
-function changeWeatherIcon {
-  let weatherIcon = document.querySelector("#weatherIcon")
-
-  weatherIcon.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
+  weatherIcon.setAttribute(
+    "src",
+    `images/${response.data.weather[0].icon}.png`
+  );
 }
 
 let currentLocationButton = document.querySelector("#current-location");
