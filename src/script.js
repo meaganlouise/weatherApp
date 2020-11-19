@@ -83,7 +83,7 @@ function showWeather(response) {
   h1.innerHTML = `${temperature}°`;
   weatherIcon.setAttribute(
     "src",
-    `images/${response.data.weather[0].icon}.png`
+    `src/images/${response.data.weather[0].icon}.png`
   );
 }
 
