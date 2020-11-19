@@ -81,6 +81,12 @@ function showWeather(response) {
   h1.innerHTML = `${temperature}°`;
 }
 
+function changeWeatherIcon {
+  let weatherIcon = document.querySelector("#weatherIcon")
+
+  weatherIcon.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
+}
+
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
