@@ -102,9 +102,15 @@ h4 {
   cursor: pointer;
 }
 .condition {
+  font-family: "Fredoka One", cursive;
   text-align: left;
   position: relative;
-  right: 292px;
+  right: 231px;
+  font-size: 28px;
+}
+
+.condition::first-letter {
+  text-transform: capitalize;
 }
 
 .searchBar {
