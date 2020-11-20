@@ -23,16 +23,13 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function search(city) {
-  let apiKey = "d7a6e9ae202ed10b9845b2800ff1ad9c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-}
-
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  let icon = document.querySelector("#icon");
+  icon.setAttribute("src", `src/images/${response.data.weather[0].icon}.png`);
 }
 
 function searchCity(city) {
@@ -78,13 +75,8 @@ flink.addEventListener("click", convertToFahren);
 function showWeather(response) {
   let h1 = document.querySelector("h1");
   let temperature = Math.round(response.data.main.temp);
-  let weatherIcon = document.querySelector("#weatherIcon");
 
   h1.innerHTML = `${temperature}°`;
-  weatherIcon.setAttribute(
-    "src",
-    `src/images/${response.data.weather[0].icon}.png`
-  );
 }
 
 let currentLocationButton = document.querySelector("#current-location");
